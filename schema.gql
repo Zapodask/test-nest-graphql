@@ -9,7 +9,7 @@ type Car {
   userId: Float!
   createdAt: DateTime!
   updatedAt: DateTime!
-  author: User!
+  user: User!
 }
 
 """
@@ -27,7 +27,7 @@ type User {
 
 type Query {
   getUsers: [User!]!
-  user(id: Float!): User
+  getUser(id: Float!): User
   getCars: [Car!]!
   getCar(id: Float!): Car
   getCarsFromUser(userId: Float!): [Car!]!

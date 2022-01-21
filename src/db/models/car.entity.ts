@@ -39,7 +39,7 @@ export default class Car {
   updatedAt: Date;
 
   @Field(() => User)
-  author: User;
+  user: User;
 
   // Associations
   @ManyToOne(() => User, (user) => user.carConnection, { primary: true })

@@ -1,9 +1,4 @@
-import {
-  MigrationInterface,
-  QueryRunner,
-  Table,
-  TableForeignKey,
-} from 'typeorm';
+import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
 export class users1642637076079 implements MigrationInterface {
   private table = new Table({
@@ -28,11 +23,6 @@ export class users1642637076079 implements MigrationInterface {
         isNullable: false,
       },
       {
-        name: 'car_id',
-        type: 'integer',
-        isNullable: false,
-      },
-      {
         name: 'created_at',
         type: 'timestamptz',
         isNullable: false,
@@ -45,13 +35,6 @@ export class users1642637076079 implements MigrationInterface {
         default: 'now()',
       },
     ],
-  });
-
-  private foreignKey = new TableForeignKey({
-    columnNames: ['car_id'],
-    referencedColumnNames: ['id'],
-    onDelete: 'CASCADE',
-    referencedTableName: 'cars',
   });
 
   public async up(queryRunner: QueryRunner): Promise<void> {
