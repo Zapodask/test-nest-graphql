@@ -2,8 +2,6 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import * as ormOptions from './config/orm';
 import RepoModule from './repo.module';
 import CarResolver from './resolvers/car.resolver';
@@ -21,7 +19,5 @@ const gqlImports = [UserResolver, CarResolver];
       playground: true,
     }),
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}

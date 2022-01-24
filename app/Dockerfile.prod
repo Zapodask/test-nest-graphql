@@ -2,10 +2,10 @@ FROM node:16.13.2-alpine
 
 WORKDIR /usr/app
 
-COPY . ./
+COPY dist package.json yarn.lock ./
 
 RUN yarn
 
 EXPOSE 5000
 
-CMD ["yarn", "start:dev"]
+CMD ["node", "main"]

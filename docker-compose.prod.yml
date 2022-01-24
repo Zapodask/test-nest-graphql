@@ -5,12 +5,10 @@ services:
     container_name: app
     build:
       context: ./app
-      dockerfile: Dockerfile
-    command: yarn start:dev
+      dockerfile: Dockerfile.prod
+    # command: node dist/main
     ports:
       - 5000:5000
-    volumes:
-      - ./app/src:/usr/app/src
     depends_on:
       - postgres
     networks:
